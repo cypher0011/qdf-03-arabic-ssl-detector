@@ -10,20 +10,11 @@
 ![trainable](https://img.shields.io/badge/trainable%20params-0.4M-16a34a)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
-Model 3 of 5 in the **QDF research series** by **Evan Deep** (Qassim DeepFake Challenge 2026, audio track)
+Model 3 of 5 in the **QDF research series** by **Evan Deep**
 
 [Motivation](#1-motivation) · [Method](#2-method) · [Results](#3-results) · [What it cannot do yet](#4-what-it-cannot-do-yet) · [Reproduce](#5-reproduce)
 
 </div>
-
----
-
-> ### ملخّص بالعربية
-> النموذج الثالث يعالج المشكلة التي كشفها النموذجان الأول والثاني: **الكاشف المدرَّب على الإنجليزية لا يعمل على العربية**. استخدمنا نموذج كلام متعدد اللغات مدرَّبًا مسبقًا على 147 لغة منها العربية (mHuBERT-147) وأبقيناه **مجمّدًا**، ودرّبنا فوقه طبقة صغيرة (0.4 مليون معامل) على بيانات عربية من ثلاث لهجات: مصرية وخليجية وفصحى.
-> * نسبة الخطأ على بيانات الاختبار العربية: **0.77%** (كانت 58.8% في النموذج الأول).
-> * على **اللهجة الخليجية دون أن يسمعها أثناء التدريب**: 3.6%، أي أن النموذج يعمّم على لهجة جديدة.
-> * اكتشفنا أن **الطبقات السفلى** (الأقرب للصوت الخام) هي الأكثر معرفة بالتزييف.
-> * **نقطة الضعف:** عند تغيّر قناة الصوت (ضغط، هاتف، إعادة تسجيل) يرتفع الخطأ إلى 26.7%، ومع مولّد غير معروف (RVC) إلى 38.6%. **النموذج الرابع يعالج القنوات.**
 
 ---
 
@@ -102,7 +93,7 @@ Leave-one-dialect-out: train on two dialects, test on the third (ArA-DF dev).
 | Egyptian | 0.36 % | 0.51 % |
 | **Gulf (Saudi)** | 0.85 % | **3.56 %** |
 
-The detector transfers to an unseen dialect, but **Gulf is the hardest**: its error grows about 4× when it is held out. For a detector deployed in Qassim, this is the most relevant number in this repository, and it shows that **Gulf training data must be in the training set**.
+The detector transfers to an unseen dialect, but **Gulf is the hardest**: its error grows about 4× when it is held out. For a detector deployed in Saudi Arabia, this is the most relevant number in this repository, and it shows that **Gulf training data must be in the training set**.
 
 ## 4. What it cannot do yet
 
@@ -156,7 +147,7 @@ qdf-03-arabic-ssl-detector/
   title  = {QDF-03: Arabic Deepfake Voice Detection on a Frozen Multilingual Encoder},
   author = {Evan Deep},
   year   = {2026},
-  note   = {Model 3 of the QDF research series, Qassim DeepFake Challenge}
+  note   = {Model 3 of the QDF research series}
 }
 ```
 Code: MIT. Model weights of mHuBERT-147 and all datasets keep their own licences.
