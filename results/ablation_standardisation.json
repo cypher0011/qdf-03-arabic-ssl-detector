@@ -1,0 +1,3 @@
+{"note": "Same head, same data, same seed; only difference is per-dimension input standardisation (measured 2026-11-16).",
+ "without_standardisation_eer": {"aradf_dev": 0.0302, "arad": 0.5081, "aradf_track2": 0.3254, "asvspoof": 0.4845},
+ "with_standardisation_eer_quick_test": {"aradf_dev": 0.0072, "arad": 0.4113, "aradf_track2": 0.2660}}
